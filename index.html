@@ -70,14 +70,39 @@
         .win-screen button:hover, #startButton:hover {
             background: #ddd;
         }
+        #orientationWarning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  color: white;
+  font-size: 24px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 9999;
+  padding: 20px;
+}
+@media screen and (orientation: portrait) {
+  #orientationWarning {
+    display: flex;
+  }
+}
+
     </style>
 </head>
 <body>
     <div id="controls">
-        Controls: <br>
+        Controls For Keyboard: <br>
         Player 1: <strong>W</strong> (Up), <strong>S</strong> (Down) <br>
         Player 2: <strong>⬆</strong> (Up), <strong>⬇</strong> (Down)
     </div>
+<div id="orientationWarning">
+  Please rotate your device to landscape for a better experience.
+</div>
 
     <div id="playerNames">
         <input type="text" id="player1" placeholder="Player 1 Name">
@@ -85,7 +110,7 @@
     </div>
 
     <button id="startButton">Start Game</button>
-    <canvas id="pong" width="1000" height="500"></canvas>
+    <canvas id="pong" ></canvas>
     <script src="script.js"></script>
 </body>
 </html>
